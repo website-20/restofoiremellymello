@@ -1002,12 +1002,22 @@
         }
 
         .gallery-item2 {
-            height: 600px;
-            border-radius: 15px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
+          height: 700px;
+          aspect-ratio: 16 / 9;
+          /* Optionnel si tu veux un ratio parfait partout */
+          border-radius: 15px;
+          overflow: hidden;
+          position: relative;
+          box-shadow: var(--shadow);
+          transition: var(--transition);
+          grid-column: span 2; /* Utilise 2 colonnes pour élargir l'item si besoin */
+        }
+        
+        .gallery-item2 video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+            transition: transform 0.8s ease;
         }
 
         .gallery-item:hover {
@@ -1023,6 +1033,20 @@
 
         .gallery-item:hover img {
             transform: scale(1.1);
+        }
+
+         .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 70%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: var(--transition);
         }
 
         .gallery-overlay {
@@ -1998,7 +2022,7 @@
                 </div>
                 <div class="gallery-item2">
                     <img src="Générique Melly Mello.MOV" alt="generique">
-                    <div class="gallery-overlay">
+                    <div class="gallery-overlay2">
                         <div class="gallery-caption" data-i18n="gallery2">Ambiance Élégante</div>
                     </div>
                 </div>
